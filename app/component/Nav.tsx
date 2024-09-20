@@ -1,10 +1,10 @@
 "use client";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { MyAlert } from "../shadcn/MyAlert";
-import MyAlertDialogue from "../shadcn/MyAlertDialogue";
+import { useEffect, useState } from "react";
 
 const Nav = () => {
+  const [accessToken, setAccessToken] = useState<string>("");
   function getCookieValue(cookieName: string) {
     const name = cookieName + "=";
     const decodedCookie = decodeURIComponent(document.cookie);
@@ -18,8 +18,9 @@ const Nav = () => {
     }
     return null;
   }
-
-  const accessToken = getCookieValue("token");
+  useEffect(() => {
+    setAccessToken(getCookieValue("token")!);
+  }, []);
 
   const navStyles =
     "hover:px-3 rounded-md hover:bg-grey-200  hover:border-2  px-2";
