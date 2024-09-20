@@ -14,7 +14,7 @@ const page = () => {
         height={100}
         className="m-4 mx-auto rounded-lg"
       />
-      <p className="text-center">Let's change your ideas into codes </p>
+      <p className="text-center">Let&apos;s change your ideas into codes </p>
       <p>Powered by Next.js</p>
       <p>Build Date: {new Date().toLocaleDateString()}</p>
       <p>GitHub Repo:</p>

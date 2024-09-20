@@ -62,7 +62,7 @@ const CreateUser = () => {
         </button>
       </form>
       <p>
-        Don’t have an account yet? Click here to{" "}
+        Don&apos;t have an account yet? Click here to{" "}
         <Link href="/register" className="text-blue-700">
           Register...
         </Link>
