@@ -283,7 +283,12 @@ function AddForm() {
             id="employmentStartDate"
             placeholder="02-04-1999"
             value={newEmployee.employmentStartDate}
-            onChange={handleChange}
+            onChange={(e) =>
+              setNewEmployee((prev) => ({
+                ...prev,
+                employmentStartDate: e.target.value,
+              }))
+            }
           />
         </div>
         <div className="p-2">

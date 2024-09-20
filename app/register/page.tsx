@@ -17,8 +17,8 @@ const Register = () => {
   };
 
   return (
-    <div className="w-72 mx-auto mt-20">
-      <form action="" className="w-full p-0 " onSubmit={handleSubmit}>
+    <div className="mx-auto mt-20 w-72">
+      <form action="" className="w-full p-0" onSubmit={handleSubmit}>
         <legend>
           <label htmlFor="address">Email address:</label>
           <br />
@@ -60,7 +60,10 @@ const Register = () => {
           />{" "}
           <br />
           <div className="text-end">
-            <button type="submit" className="btn btn-accent my-2 mr-4">
+            <button
+              type="submit"
+              className="mt-2 w-full border-0 bg-gray-700 p-2 text-white hover:bg-gray-500"
+            >
               Create Account
             </button>
           </div>

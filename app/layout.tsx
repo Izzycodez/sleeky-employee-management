@@ -17,7 +17,9 @@ export default function RootLayout({
     <html lang="en">
       <body className="bg-gray-120">
         <Nav />
-        <div className="m-2">{children}</div>
+        <div className="m-2 mx-auto min-h-80 w-3/4 max-sm:w-full">
+          {children}
+        </div>
         <Footer />
       </body>
     </html>

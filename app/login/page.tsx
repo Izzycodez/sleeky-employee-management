@@ -8,6 +8,7 @@ const CreateUser = () => {
   const router = useRouter();
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -15,14 +16,16 @@ const CreateUser = () => {
       const accessToken = await loginEmployee(email, password);
       console.log("Logged in with token:", accessToken);
       router.push("/employees");
+      setIsLoading(true);
     } catch (error) {
       console.error("Login failed:", error);
-      // Handle the error (e.g., show a message to the user)
+    } finally {
+      setIsLoading(false);
     }
   }
 
   return (
-    <div className="w-72 mx-auto mt-20">
+    <div className="mx-auto mt-20 w-72">
       <form onSubmit={handleSubmit}>
         <label htmlFor="address">Email address:</label>
         <br />
@@ -52,13 +55,14 @@ const CreateUser = () => {
         <br />
         <button
           type="submit"
-          className="text-blue-300 w-full bg-black p-2 border-0 mt-2"
+          disabled={isLoading}
+          className="mt-2 w-full border-0 bg-gray-700 p-2 text-white hover:bg-gray-500"
         >
-          Login
+          {isLoading ? "Logging In..." : "Login"}
         </button>
       </form>
       <p>
-        Don’t have an account yet? Click here to{" "}
+        Don&apos;t have an account yet? Click here to{" "}
         <Link href="/register" className="text-blue-700">
           Register...
         </Link>
