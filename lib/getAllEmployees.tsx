@@ -14,7 +14,7 @@ export const getAllEmployees = async (): Promise<MyEmployee[]> => {
       "Content-Type": "application/json",
       Authorization: `Bearer ${accessToken}`,
     },
-    next: { revalidate: 2 },
+    next: { revalidate: 1 },
   });
 
   if (!res.ok) {

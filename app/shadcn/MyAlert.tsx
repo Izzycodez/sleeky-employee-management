@@ -4,17 +4,17 @@ import { Terminal } from "lucide-react";
 export const MyAlert = ({
   title,
   description,
+  alertStyle,
 }: {
   title: string;
   description: string;
+  alertStyle: string;
 }) => {
   return (
-    <Alert>
+    <Alert className={alertStyle}>
       <Terminal className="h-4 w-4" />
-      <AlertTitle>Heads up!</AlertTitle>
-      <AlertDescription>
-        You can add components and dependencies to your app using the cli.
-      </AlertDescription>
+      <AlertTitle>{title}</AlertTitle>
+      <AlertDescription>{description} </AlertDescription>
     </Alert>
   );
 };
