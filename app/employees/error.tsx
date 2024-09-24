@@ -14,7 +14,7 @@ export default function Error({
   }, [error]);
 
   return (
-    <div>
+    <div className="min-h-[82vh] bg-gray-900">
       <h2>Something went wrong...!</h2>
       <h2>
         Seems like you are trying to access a confidential Route without
