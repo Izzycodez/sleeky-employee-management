@@ -13,10 +13,8 @@ const CreateUser = () => {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     try {
-      const accessToken = await loginEmployee(email, password);
-      console.log("Logged in with token:", accessToken);
-      router.push("/employees");
-      setIsLoading(true);
+      await loginEmployee(email, password);
+      window.location.href = "/employees";
     } catch (error) {
       console.error("Login failed:", error);
     } finally {
