@@ -8,12 +8,18 @@ const Register = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [confirmPassword, setConfirmPassword] = useState<string>("");
+  const [isLoading, setIsLoading] = useState<boolean>(false);
+
   const router = useRouter();
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     registerAccount(password, confirmPassword, email);
-    router.push("/login");
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+      router.push("/login");
+    }, 3000);
   };
 
   return (
@@ -24,7 +30,7 @@ const Register = () => {
           <br />
           <input
             type="email"
-            className="input input-bordered w-full max-w-xs"
+            className="h-8 w-full rounded-lg border-2 px-3"
             name="address"
             id="address"
             required
@@ -36,7 +42,7 @@ const Register = () => {
           <label htmlFor="Password">Set Password</label>
           <br />
           <input
-            className="input input-bordered w-full max-w-xs"
+            className="h-8 w-full rounded-lg border-2 px-3"
             type="password"
             required
             value={password}
@@ -49,7 +55,7 @@ const Register = () => {
           <label htmlFor="ConfirmPassword">Confirm Password </label>
           <br />
           <input
-            className="input input-bordered w-full max-w-xs"
+            className="h-8 w-full rounded-lg border-2 px-3"
             type="password"
             required
             value={confirmPassword}
@@ -62,9 +68,10 @@ const Register = () => {
           <div className="text-end">
             <button
               type="submit"
-              className="mt-2 w-full border-0 bg-gray-700 p-2 text-white hover:bg-gray-500"
+              disabled={isLoading}
+              className="mt-4 w-full border-0 bg-gray-700 p-2 text-white hover:bg-gray-500"
             >
-              Create Account
+              {isLoading ? "Creating Account ..." : "Create Account"}
             </button>
           </div>
         </legend>

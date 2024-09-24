@@ -13,6 +13,7 @@ const CreateUser = () => {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     try {
+      setIsLoading(true);
       await loginEmployee(email, password);
       window.location.href = "/employees";
     } catch (error) {
@@ -28,7 +29,7 @@ const CreateUser = () => {
         <label htmlFor="address">Email address:</label>
         <br />
         <input
-          className="h-8 w-full rounded-sm border-2 px-3"
+          className="h-8 w-full rounded-lg border-2 px-3"
           type="email"
           name="address"
           id="address"
@@ -44,7 +45,7 @@ const CreateUser = () => {
           type="password"
           required
           name="password"
-          className="h-8 w-full rounded-sm border-2 px-3"
+          className="h-8 w-full rounded-lg border-2 px-3"
           id="password"
           placeholder="********"
           value={password}
