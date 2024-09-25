@@ -24,7 +24,7 @@ const CreateUser = () => {
   }
 
   return (
-    <div className="mx-auto mt-20 min-h-[74vh] w-72">
+    <div className="mx-auto min-h-[82.4vh] w-72 pt-8 max-[640px]:min-h-[85vh]">
       <form onSubmit={handleSubmit}>
         <label htmlFor="address">Email address:</label>
         <br />

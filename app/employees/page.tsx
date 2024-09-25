@@ -11,10 +11,10 @@ export const metadata = {
 const EmployeePage = async () => {
   try {
     const employees: MyEmployee[] = (await getAllEmployees()).reverse();
-    //    min-[400px]:min-h-[72.3vh] min-h-[80vh] sm:min-h-[76vh]
+    //    <div className="max-sm: min-[400px]sm:min-h-[72.3vh] min-h-[80vh] sm:min-h-[76vh]">
 
     return (
-      <div className="mx-auto my-4 min-h-[80vh] w-fit border-2 p-4 max-md:w-full min-[400px]:min-h-[72.3vh] sm:min-h-[76vh]">
+      <div className="mx-auto my-4 w-fit border-2 p-4 max-md:w-full">
         <h1 className="mb-3 text-center text-4xl">
           Welcome to Sleeky Programmers
         </h1>
@@ -54,7 +54,7 @@ const EmployeePage = async () => {
   } catch (error) {
     return (
       <>
-        <div className="mx-auto my-12 h-52 min-h-[74vh] w-fit">
+        <div className="mx-auto h-52 min-h-[82.4vh] w-fit pt-12 max-[640px]:min-h-[85vh]">
           Error loading employees.
           <MyAlert
             title="Error...!"

@@ -23,7 +23,7 @@ const Register = () => {
   };
 
   return (
-    <div className="mx-auto mt-20 w-72">
+    <div className="mx-auto mt-20 min-h-[68vh] w-72 max-[640px]:min-h-[73vh]">
       <form action="" className="w-full p-0" onSubmit={handleSubmit}>
         <legend>
           <label htmlFor="address">Email address:</label>
