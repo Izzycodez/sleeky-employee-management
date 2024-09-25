@@ -29,7 +29,7 @@ const CreateUser = () => {
         <label htmlFor="address">Email address:</label>
         <br />
         <input
-          className="h-8 w-full rounded-lg border-2 px-3"
+          className="input input-bordered w-full max-w-xs border-2 bg-white px-3"
           type="email"
           name="address"
           id="address"
@@ -45,7 +45,7 @@ const CreateUser = () => {
           type="password"
           required
           name="password"
-          className="h-8 w-full rounded-lg border-2 px-3"
+          className="input input-bordered w-full max-w-xs border-2 bg-white px-3"
           id="password"
           placeholder="********"
           value={password}

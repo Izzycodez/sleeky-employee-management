@@ -30,7 +30,7 @@ const Register = () => {
           <br />
           <input
             type="email"
-            className="h-8 w-full rounded-lg border-2 px-3"
+            className="input input-bordered w-full max-w-xs border-2 bg-white px-3"
             name="address"
             id="address"
             required
@@ -42,7 +42,7 @@ const Register = () => {
           <label htmlFor="Password">Set Password</label>
           <br />
           <input
-            className="h-8 w-full rounded-lg border-2 px-3"
+            className="input input-bordered w-full max-w-xs border-2 bg-white px-3"
             type="password"
             required
             value={password}
@@ -55,7 +55,7 @@ const Register = () => {
           <label htmlFor="ConfirmPassword">Confirm Password </label>
           <br />
           <input
-            className="h-8 w-full rounded-lg border-2 px-3"
+            className="input input-bordered w-full max-w-xs border-2 bg-white px-3"
             type="password"
             required
             value={confirmPassword}

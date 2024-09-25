@@ -38,7 +38,7 @@ function AddForm() {
     physicalAddress: "",
   });
   const formStyle: string =
-    " md:p-2 border w-full h-8 rounded-lg border-2 px-3";
+    " md:p-2 border w-full rounded-lg bg-white h-9 border-2 px-3";
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, type, value, checked } = event.target;

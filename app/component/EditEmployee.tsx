@@ -38,7 +38,7 @@ function AddForm({ employee }: { employee: MyEmployee }) {
     physicalAddress: employee.physicalAddress,
   });
   const formStyle: string =
-    " md:p-2 border w-full h-8 rounded-lg border-2 px-3";
+    " md:p-2 border w-full h-9 bg-white rounded-lg border-2 px-3";
 
   async function handleEdit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
