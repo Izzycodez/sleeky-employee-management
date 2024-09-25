@@ -188,7 +188,7 @@ function AddForm() {
             <legend>Gender</legend>
             <input
               type="radio"
-              className="mx-2"
+              className="mx-2 active:text-red-800"
               name="gender"
               id="gender"
               value="MALE"
@@ -199,7 +199,7 @@ function AddForm() {
             <br />
             <input
               type="radio"
-              className="mx-2"
+              className="mx-2 active:text-red-800"
               name="gender"
               id="gender"
               value="FEMALE"
@@ -264,6 +264,7 @@ function AddForm() {
                 employmentRole: e.target.value,
               }))
             }
+            className="bg-white"
           >
             <option value="">Select an option</option>
             <option value={JobRoles.SOFTWARE_ENGINEER}>

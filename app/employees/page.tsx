@@ -30,7 +30,7 @@ const EmployeePage = async () => {
                   <h2 className="card-title underline">{`${employee.firstName} ${employee.lastName}`}</h2>
                   <p>A {employee.employmentRole} at SleekyProgrammers</p>
                   <div className="card-actions justify-end">
-                    <button className="btn bg-blue-400">
+                    <button className="btn bg-blue-400 text-black">
                       <Navigator
                         pathDirection={`/employees/${employee._id}`}
                         text={`Go to ${employee.firstName}'s profile to see more`}
