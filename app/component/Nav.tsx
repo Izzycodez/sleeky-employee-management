@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Nav = () => {
-  const [accessToken, setAccessToken] = useState<string | null>("");
+  const [accessToken, setAccessToken] = useState<string | null>(null);
   function getCookieValue(cookieName: string) {
     const name = cookieName + "=";
     const decodedCookie = decodeURIComponent(document.cookie);
@@ -29,7 +29,7 @@ const Nav = () => {
     { name: "Employees", href: "/employees" },
     {
       name: accessToken ? "LogOut" : "LogIn",
-      href: accessToken ? "/" : "/login",
+      href: "/login",
     },
   ];
   const pathName = usePathname();
@@ -43,10 +43,7 @@ const Nav = () => {
   };
 
   return (
-    <header
-      style={{ minHeight: "8vh" }}
-      className="text-white-200 w-full bg-gray-500"
-    >
+    <header className="text-white-200 min-h-[9vh] w-full bg-gray-500">
       <nav className="lg:text-md mx-auto flex w-3/4 items-center justify-between p-1 text-xs max-sm:w-full max-[400px]:flex-col sm:px-6 sm:py-4 sm:text-sm">
         <Link href="/">
           <div className="mb-1 flex max-[280px]:flex-col sm:mb-0">
