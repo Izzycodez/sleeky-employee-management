@@ -37,7 +37,8 @@ function AddForm() {
     phoneNumber: "",
     physicalAddress: "",
   });
-  const formStyle: string = "px-1 md:p-2 border w-full";
+  const formStyle: string =
+    " md:p-2 border w-full rounded-lg bg-white h-9 border-2 px-3";
 
   function handleChange(event: ChangeEvent<HTMLInputElement>) {
     const { name, type, value, checked } = event.target;
@@ -57,7 +58,7 @@ function AddForm() {
   return (
     <div>
       <form
-        className="grid grid-cols-2 rounded-lg max-[600px]:grid-cols-1 border-2"
+        className="grid grid-cols-2 rounded-lg border-2 max-[600px]:grid-cols-1"
         onSubmit={handleAdd}
       >
         <div className="p-2">
@@ -187,7 +188,7 @@ function AddForm() {
             <legend>Gender</legend>
             <input
               type="radio"
-              className="mx-2"
+              className="mx-2 border-2 border-gray-300 bg-white checked:bg-blue-800"
               name="gender"
               id="gender"
               value="MALE"
@@ -198,7 +199,7 @@ function AddForm() {
             <br />
             <input
               type="radio"
-              className="mx-2"
+              className="mx-2 border-2 border-gray-300 bg-white checked:bg-blue-800"
               name="gender"
               id="gender"
               value="FEMALE"
@@ -263,6 +264,7 @@ function AddForm() {
                 employmentRole: e.target.value,
               }))
             }
+            className="rounded border bg-white p-2 focus:border-blue-500 focus:ring-blue-500"
           >
             <option value="">Select an option</option>
             <option value={JobRoles.SOFTWARE_ENGINEER}>
@@ -317,7 +319,7 @@ function AddForm() {
             onChange={handleChange}
           />
         </div>
-        <button className="bg-green-500 p-4 rounded-lg"> ADD</button>
+        <button className="rounded-lg bg-green-500 p-4"> ADD</button>
       </form>
     </div>
   );

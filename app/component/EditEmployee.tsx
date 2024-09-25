@@ -37,7 +37,9 @@ function AddForm({ employee }: { employee: MyEmployee }) {
     phoneNumber: employee.phoneNumber,
     physicalAddress: employee.physicalAddress,
   });
-  const formStyle: string = "px-1 md:p-2 border w-full";
+  const formStyle: string =
+    " md:p-2 border w-full h-9 bg-white rounded-lg border-2 px-3";
+
   async function handleEdit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
 
@@ -56,7 +58,7 @@ function AddForm({ employee }: { employee: MyEmployee }) {
   return (
     <div>
       <form
-        className="grid grid-cols-2 rounded-lg max-[600px]:grid-cols-1 border-2"
+        className="grid grid-cols-2 rounded-lg border-2 max-[600px]:grid-cols-1"
         onSubmit={handleEdit}
       >
         <div className="p-2">
@@ -186,7 +188,7 @@ function AddForm({ employee }: { employee: MyEmployee }) {
             <legend>Gender</legend>
             <input
               type="radio"
-              className="mx-2"
+              className="mx-2 border-2 border-gray-300 bg-white checked:bg-blue-800"
               name="gender"
               id="gender"
               value="MALE"
@@ -197,7 +199,7 @@ function AddForm({ employee }: { employee: MyEmployee }) {
             <br />
             <input
               type="radio"
-              className="mx-2"
+              className="mx-2 border-2 border-gray-300 bg-white checked:bg-blue-800"
               name="gender"
               id="gender"
               value="FEMALE"
@@ -256,6 +258,7 @@ function AddForm({ employee }: { employee: MyEmployee }) {
             name="employmentRole"
             id="employmentRole"
             value={newEmployee.employmentRole}
+            className="rounded border bg-white p-2 focus:border-blue-500 focus:ring-blue-500"
             onChange={(e) =>
               setNewEmployee((prev) => ({
                 ...prev,
@@ -311,7 +314,7 @@ function AddForm({ employee }: { employee: MyEmployee }) {
             onChange={handleChange}
           />
         </div>
-        <button className="bg-green-500 p-4 rounded-lg"> Edit</button>
+        <button className="rounded-lg bg-green-500 p-4"> Edit</button>
       </form>
     </div>
   );
