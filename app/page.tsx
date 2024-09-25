@@ -4,9 +4,8 @@ import sleeky from "@/images/sleekyProgrammers.jpg";
 
 const page = () => {
   return (
-    <div className="max-sm: m-5">
-      <h1 className="text-center text-2xl">Welcome to SleekyProgrammers</h1>
-
+    <div className="min-h-[76vh] max-sm:m-5 min-[400px]:min-h-[81vh]">
+      <h1 className="text-center text-2xl">Sleeky Employee Management</h1>
       <Image
         src={sleeky}
         alt="Sleeky Test Logo"

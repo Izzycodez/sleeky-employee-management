@@ -13,10 +13,8 @@ const CreateUser = () => {
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
     try {
-      const accessToken = await loginEmployee(email, password);
-      console.log("Logged in with token:", accessToken);
-      router.push("/employees");
-      setIsLoading(true);
+      await loginEmployee(email, password);
+      window.location.href = "/employees";
     } catch (error) {
       console.error("Login failed:", error);
     } finally {
@@ -25,12 +23,12 @@ const CreateUser = () => {
   }
 
   return (
-    <div className="mx-auto mt-20 w-72">
+    <div className="mx-auto mt-20 min-h-[74vh] w-72">
       <form onSubmit={handleSubmit}>
         <label htmlFor="address">Email address:</label>
         <br />
         <input
-          className="input input-bordered w-full max-w-xs"
+          className="h-8 w-full rounded-sm border-2 px-3"
           type="email"
           name="address"
           id="address"
@@ -46,7 +44,7 @@ const CreateUser = () => {
           type="password"
           required
           name="password"
-          className="input input-bordered w-full max-w-xs"
+          className="h-8 w-full rounded-sm border-2 px-3"
           id="password"
           placeholder="********"
           value={password}

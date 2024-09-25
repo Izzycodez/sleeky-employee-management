@@ -4,7 +4,7 @@ import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 
 const Nav = () => {
-  const [accessToken, setAccessToken] = useState<string>("");
+  const [accessToken, setAccessToken] = useState<string | null>(null);
   function getCookieValue(cookieName: string) {
     const name = cookieName + "=";
     const decodedCookie = decodeURIComponent(document.cookie);
@@ -19,30 +19,31 @@ const Nav = () => {
     return null;
   }
   useEffect(() => {
-    setAccessToken(getCookieValue("token")!);
-  }, []);
+    setAccessToken(getCookieValue("token"));
+  }, [accessToken]);
 
   const navStyles =
     "hover:px-3 rounded-md hover:bg-grey-200  hover:border-2  px-2";
   const navLinks = [
     { name: "Home", href: "/" },
     { name: "Employees", href: "/employees" },
-    { name: accessToken ? "LogOut" : "LogIn", href: "/login" },
+    {
+      name: accessToken ? "LogOut" : "LogIn",
+      href: accessToken ? "/" : "/login",
+    },
   ];
   const pathName = usePathname();
   const handleLogout = () => {
     const now = new Date();
     now.setTime(now.getTime() + 5 * 1000);
     document.cookie = `token=; expires=${now.toUTCString()}; path=/;`;
-
-    // Redirect to login after 5 seconds
     setTimeout(() => {
       window.location.href = "/";
-    }, 5000);
+    }, 200);
   };
 
   return (
-    <header className="text-white-200 w-full bg-gray-500">
+    <header className="text-white-200 min-h-[9vh] w-full bg-gray-500">
       <nav className="lg:text-md mx-auto flex w-3/4 items-center justify-between p-1 text-xs max-sm:w-full max-[400px]:flex-col sm:px-6 sm:py-4 sm:text-sm">
         <Link href="/">
           <div className="mb-1 flex max-[280px]:flex-col sm:mb-0">

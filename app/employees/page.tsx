@@ -1,6 +1,7 @@
 import { getAllEmployees } from "@/lib/getAllEmployees";
 import { Navigator } from "../component/Navigator";
 import Link from "next/link";
+import { MyAlert } from "../shadcn/MyAlert";
 export const dynamic = "force-dynamic"; // Forces server-side rendering
 
 export const metadata = {
@@ -10,9 +11,10 @@ export const metadata = {
 const EmployeePage = async () => {
   try {
     const employees: MyEmployee[] = (await getAllEmployees()).reverse();
+    //    min-[400px]:min-h-[72.3vh] min-h-[80vh] sm:min-h-[76vh]
 
     return (
-      <div className="mx-auto my-4 w-fit border-2 p-4 max-md:w-full">
+      <div className="mx-auto my-4 min-h-[80vh] w-fit border-2 p-4 max-md:w-full min-[400px]:min-h-[72.3vh] sm:min-h-[76vh]">
         <h1 className="mb-3 text-center text-4xl">
           Welcome to Sleeky Programmers
         </h1>
@@ -50,8 +52,19 @@ const EmployeePage = async () => {
       </div>
     );
   } catch (error) {
-    console.error("Error fetching employees:", error);
-    return <div>Error loading employees. Please try again later.</div>;
+    return (
+      <>
+        <div className="mx-auto my-12 h-52 min-h-[74vh] w-fit">
+          Error loading employees.
+          <MyAlert
+            title="Error...!"
+            description={error?.toString()!}
+            alertStyle="text-red-600 font-serif text-xl my-6 font-bold"
+          ></MyAlert>
+          Please login to continue.
+        </div>
+      </>
+    );
   }
 };
 
