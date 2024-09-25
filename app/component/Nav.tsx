@@ -29,7 +29,7 @@ const Nav = () => {
     { name: "Employees", href: "/employees" },
     {
       name: accessToken ? "LogOut" : "LogIn",
-      href: accessToken ? "/" : "/login",
+      href: "/login",
     },
   ];
   const pathName = usePathname();

@@ -188,7 +188,7 @@ function AddForm({ employee }: { employee: MyEmployee }) {
             <legend>Gender</legend>
             <input
               type="radio"
-              className="mx-2"
+              className="mx-2 border-2 border-gray-300 bg-white checked:bg-blue-800"
               name="gender"
               id="gender"
               value="MALE"
@@ -199,7 +199,7 @@ function AddForm({ employee }: { employee: MyEmployee }) {
             <br />
             <input
               type="radio"
-              className="mx-2"
+              className="mx-2 border-2 border-gray-300 bg-white checked:bg-blue-800"
               name="gender"
               id="gender"
               value="FEMALE"
@@ -258,6 +258,7 @@ function AddForm({ employee }: { employee: MyEmployee }) {
             name="employmentRole"
             id="employmentRole"
             value={newEmployee.employmentRole}
+            className="rounded border bg-white p-2 focus:border-blue-500 focus:ring-blue-500"
             onChange={(e) =>
               setNewEmployee((prev) => ({
                 ...prev,

@@ -188,7 +188,7 @@ function AddForm() {
             <legend>Gender</legend>
             <input
               type="radio"
-              className="mx-2 active:text-red-800"
+              className="mx-2 border-2 border-gray-300 bg-white checked:bg-blue-800"
               name="gender"
               id="gender"
               value="MALE"
@@ -199,7 +199,7 @@ function AddForm() {
             <br />
             <input
               type="radio"
-              className="mx-2 checked:bg-red-800 focus:ring-red-800"
+              className="mx-2 border-2 border-gray-300 bg-white checked:bg-blue-800"
               name="gender"
               id="gender"
               value="FEMALE"
