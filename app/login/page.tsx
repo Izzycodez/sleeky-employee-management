@@ -9,6 +9,7 @@ const CreateUser = () => {
   const [email, setEmail] = useState<string>("");
   const [password, setPassword] = useState<string>("");
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const [isVisible, setIsVisible] = useState<boolean>(false);
 
   async function handleSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault();
@@ -22,6 +23,8 @@ const CreateUser = () => {
       setIsLoading(false);
     }
   }
+  const inputStyle: string =
+    "input input-bordered w-full max-w-xs border-2 bg-white px-3";
 
   return (
     <div className="mx-auto min-h-[82.4vh] w-72 pt-24 max-[640px]:min-h-[85vh]">
@@ -29,7 +32,7 @@ const CreateUser = () => {
         <label htmlFor="address">Email address:</label>
         <br />
         <input
-          className="input input-bordered w-full max-w-xs border-2 bg-white px-3"
+          className={inputStyle}
           type="email"
           name="address"
           id="address"
@@ -39,19 +42,30 @@ const CreateUser = () => {
           placeholder="abcd@efg.com"
         />
         <br />
-        <label htmlFor="Password">Enter Password:</label>
-        <br />
-        <input
-          type="password"
-          required
-          name="password"
-          className="input input-bordered w-full max-w-xs border-2 bg-white px-3"
-          id="password"
-          placeholder="********"
-          value={password}
-          onChange={(e) => setPassword(e.target.value)}
-        />
-        <br />
+
+        <div>
+          <label htmlFor="password" className="block">
+            Enter Password
+          </label>
+          <div className="input-container">
+            <input
+              type={isVisible ? "text" : "password"}
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              name="password"
+              id="password"
+              placeholder="********"
+              className={`${inputStyle} input-style`}
+              required
+            />
+            <span
+              className="toggle-visibility"
+              onClick={() => setIsVisible(!isVisible)}
+            >
+              {isVisible ? "👁️" : "👁️‍🗨️"}
+            </span>
+          </div>
+        </div>
         <button
           type="submit"
           disabled={isLoading}

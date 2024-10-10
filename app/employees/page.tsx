@@ -61,7 +61,11 @@ const EmployeePage = async () => {
             description={error?.toString()!}
             alertStyle="text-red-600 font-serif text-xl my-6 font-bold"
           ></MyAlert>
-          Please login to continue.
+          Please{" "}
+          <Link href={"/login"} className="italic text-blue-600">
+            login
+          </Link>{" "}
+          to continue.
         </div>
       </>
     );
