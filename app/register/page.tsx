@@ -18,6 +18,7 @@ const Register = () => {
     e.preventDefault();
     registerAccount(password, confirmPassword, email);
     setIsLoading(true);
+    alert("Account created successfully.");
     setTimeout(() => {
       setIsLoading(false);
       router.push("/login");
@@ -27,7 +28,7 @@ const Register = () => {
     "input input-bordered w-full max-w-xs border-2 bg-white px-3";
 
   return (
-    <div className="mx-auto min-h-[82.4vh] w-72 pt-24 max-[640px]:min-h-[85vh]">
+    <div className="mx-auto min-h-[83.5vh] w-72 pt-24 max-[640px]:min-h-[85vh]">
       <form action="" className="w-full p-0" onSubmit={handleSubmit}>
         <legend>
           <label htmlFor="address">Email address:</label>
