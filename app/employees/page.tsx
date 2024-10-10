@@ -14,13 +14,13 @@ const EmployeePage = async () => {
     //    <div className="max-sm: min-[400px]sm:min-h-[72.3vh] min-h-[80vh] sm:min-h-[76vh]">
 
     return (
-      <div className="mx-auto my-4 w-fit border-2 p-4 max-md:w-full">
+      <div className="[640px]:min-h-[83vh] mx-auto my-4 min-h-[78.2vh] w-fit p-4 max-md:w-full">
         <h1 className="mb-3 text-center text-4xl">
           Welcome to Sleeky Programmers
         </h1>
 
         <section className="mx-auto w-fit">
-          <div className="mx-auto grid grid-cols-2 max-lg:grid-cols-1">
+          <div className="mx-auto grid grid-cols-2 space-x-2 max-lg:grid-cols-1">
             {employees.map((employee) => (
               <div
                 className="card mx-auto my-4 w-80 bg-gray-500 text-white hover:bg-gray-700"
@@ -54,7 +54,7 @@ const EmployeePage = async () => {
   } catch (error) {
     return (
       <>
-        <div className="mx-auto h-52 min-h-[82.4vh] w-fit pt-20 max-[640px]:min-h-[83vh]">
+        <div className="mx-auto h-52 min-h-[83.5vh] w-fit pt-20 max-[640px]:min-h-[83vh]">
           Error loading employees.
           <MyAlert
             title="Error...!"
