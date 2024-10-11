@@ -16,13 +16,29 @@ const Register = () => {
 
   const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    registerAccount(password, confirmPassword, email);
+    // registerAccount(password, confirmPassword, email);
+    // setIsLoading(true);
+    // alert("Account created successfully.");
+    // setTimeout(() => {
+    //   setIsLoading(false);
+    //   router.push("/login");
+    // }, 3000);
     setIsLoading(true);
-    alert("Account created successfully.");
-    setTimeout(() => {
-      setIsLoading(false);
-      router.push("/login");
-    }, 3000);
+    const response: boolean = await registerAccount(
+      password,
+      confirmPassword,
+      email,
+    );
+
+    if (response) {
+      alert("Registration successful!");
+      setTimeout(() => {
+        setIsLoading(false);
+        router.push("/login");
+      }, 1000);
+    } else {
+      alert("Registration failed.");
+    }
   };
   const inputStyle =
     "input input-bordered w-full max-w-xs border-2 bg-white px-3";
